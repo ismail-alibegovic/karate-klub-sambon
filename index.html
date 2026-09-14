@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="bs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Karate klub Sambon Vogošća</title>
+  <meta name="description" content="Karate klub Sambon Vogošća - škola karatea, karate vrtić, treninzi za djecu i takmičare." />
+  <meta property="og:title" content="Karate klub Sambon Vogošća" />
+  <meta property="og:description" content="Karate gradi disciplinu, karakter i šampionski duh. Upis novih članova u Karate klub Sambon Vogošća." />
+  <meta name="theme-color" content="#0b0b0d" />
+  <style>
+    :root {
+      --bg: #08080a;
+      --panel: #101014;
+      --panel-2: #17171d;
+      --text: #f4f1ea;
+      --muted: #a8a49b;
+      --line: rgba(244, 241, 234, 0.14);
+      --red: #e6362e;
+      --red-dark: #9d1515;
+      --gold: #e8b34d;
+      --white-soft: rgba(255, 255, 255, 0.78);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .page { min-height: 100vh; background:
+      radial-gradient(circle at 72% 12%, rgba(230, 54, 46, 0.26), transparent 32rem),
+      linear-gradient(120deg, rgba(255,255,255,0.045) 0 1px, transparent 1px 100%),
+      #08080a;
+      background-size: auto, 56px 56px, auto;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: center;
+      padding: 18px;
+      pointer-events: none;
+    }
+
+    .nav-inner {
+      width: min(var(--max), calc(100vw - 28px));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      background: rgba(8, 8, 10, 0.74);
+      backdrop-filter: blur(18px);
+      pointer-events: auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 210px;
+    }
+
+    .mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--red), #6d0f13);
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      transform: skew(-9deg);
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 0.94rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.76rem;
+      margin-top: -2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--white-soft);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    .nav-cta, .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: var(--text);
+      color: #08080a;
+      font-weight: 850;
+      font-size: 0.76rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+
+    .nav-cta:hover, .button:hover { transform: translateY(-2px); background: #fff; }
+    .button.secondary { background: transparent; color: var(--text); }
+    .button.secondary:hover { background: rgba(255,255,255,0.08); }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      align-items: end;
+      padding: 138px 18px 34px;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(8,8,10,0.98) 0%, rgba(8,8,10,0.78) 43%, rgba(8,8,10,0.26) 100%),
+        url("https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=1800&q=82") center / cover;
+      filter: saturate(0.62) contrast(1.12) brightness(0.72);
+      z-index: -2;
+    }
+
+    .hero:after {
+      content: "SAMBON";
+      position: absolute;
+      right: -0.12em;
+      bottom: -0.22em;
+      z-index: -1;
+      font-size: clamp(5rem, 17vw, 18rem);
+      font-weight: 950;
+      line-height: 0.78;
+      letter-spacing: -0.08em;
+      color: rgba(255,255,255,0.055);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.55fr);
+      gap: 44px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow:before {
+      content: "";
+      width: 42px;
+      height: 2px;
+      background: var(--red);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 870px;
+      font-size: clamp(4rem, 11vw, 10.5rem);
+      line-height: 0.8;
+      letter-spacing: -0.075em;
+      text-transform: uppercase;
+      font-weight: 950;
+    }
+
+    .hero-copy {
+      max-width: 640px;
+      margin: 28px 0 0;
+      color: var(--white-soft);
+      font-size: clamp(1.05rem, 1.55vw, 1.35rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .hero-card {
+      border: 1px solid var(--line);
+      background: rgba(16,16,20,0.74);
+      backdrop-filter: blur(14px);
+      padding: 20px;
+    }
+
+    .hero-card p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+    .hero-card strong { display: block; margin-top: 8px; font-size: 1.38rem; }
+
+    .stats {
+      width: min(var(--max), calc(100vw - 36px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .stat {
+      min-height: 156px;
+      padding: 24px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #0d0d11;
+    }
+
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.76rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .stat strong {
+      display: block;
+      margin-top: 18px;
+      font-size: clamp(2.3rem, 4vw, 4.7rem);
+      line-height: 0.82;
+      letter-spacing: -0.065em;
+      text-transform: uppercase;
+    }
+
+    section { padding: 104px 18px; }
+    .wrap { width: min(var(--max), 100%); margin: 0 auto; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.78fr 1.22fr;
+      gap: 54px;
+      align-items: start;
+    }
+
+    .kicker {
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 850;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2.5rem, 6.4vw, 7rem);
+      line-height: 0.88;
+      letter-spacing: -0.065em;
+      text-transform: uppercase;
+      font-weight: 950;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--white-soft);
+      font-size: clamp(1.05rem, 1.7vw, 1.45rem);
+      max-width: 760px;
+    }
+
+    .text-muted { color: var(--muted); }
+
+    .service-list {
+      display: grid;
+      margin-top: 44px;
+      border-top: 1px solid var(--line);
+    }
+
+    .service {
+      display: grid;
+      grid-template-columns: 90px 1fr minmax(240px, 0.65fr);
+      gap: 22px;
+      align-items: start;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .number {
+      color: var(--red);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      font-size: 1.3rem;
+    }
+
+    .service h3 {
+      margin: 0;
+      font-size: clamp(1.6rem, 3.2vw, 3.4rem);
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+    }
+
+    .service p { margin: 0; color: var(--muted); font-size: 1rem; }
+
+    .process {
+      background: #f3efe7;
+      color: #09090b;
+    }
+
+    .process .kicker { color: var(--red-dark); }
+    .process .lead, .process .text-muted { color: rgba(9,9,11,0.68); }
+    .process .service-list { border-color: rgba(9,9,11,0.16); }
+    .process .service { border-color: rgba(9,9,11,0.16); }
+
+    .coach {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: stretch;
+      margin-top: 48px;
+    }
+
+    .coach-media {
+      min-height: 420px;
+      background:
+        linear-gradient(180deg, rgba(230,54,46,0.12), rgba(8,8,10,0.72)),
+        url("https://images.unsplash.com/photo-1526401485004-46910ecc8e51?auto=format&fit=crop&w=1200&q=82") center / cover;
+      border: 1px solid var(--line);
+      filter: saturate(0.72) contrast(1.08);
+    }
+
+    .coach-card {
+      padding: 34px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 44px;
+    }
+
+    .coach-card h3 {
+      margin: 0;
+      font-size: clamp(2.3rem, 5vw, 5.8rem);
+      line-height: 0.86;
+      letter-spacing: -0.06em;
+      text-transform: uppercase;
+    }
+
+    .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .badge {
+      border: 1px solid var(--line);
+      color: var(--white-soft);
+      padding: 9px 12px;
+      font-size: 0.76rem;
+      font-weight: 850;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .quote {
+      padding: 88px 18px;
+      background: linear-gradient(135deg, #1a0d0d, #08080a 62%);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .quote blockquote {
+      width: min(940px, 100%);
+      margin: 0 auto;
+      font-size: clamp(2rem, 5vw, 5.2rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      text-align: center;
+      font-weight: 930;
+      text-transform: uppercase;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      margin-top: 44px;
+    }
+
+    .photo {
+      min-height: 390px;
+      border: 1px solid var(--line);
+      background-size: cover;
+      background-position: center;
+      filter: saturate(0.72) contrast(1.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo:after {
+      content: attr(data-label);
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      padding: 8px 10px;
+      background: rgba(8,8,10,0.78);
+      color: #fff;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 850;
+    }
+
+    .photo.one { background-image: url("https://images.unsplash.com/photo-1591117207239-788bf8de6c3b?auto=format&fit=crop&w=1400&q=82"); }
+    .photo.two { background-image: url("https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=900&q=82"); }
+
+    .cta {
+      padding: 110px 18px 36px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(230,54,46,0.28), transparent 30rem),
+        #08080a;
+    }
+
+    .cta-box {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: end;
+      padding: 42px 0 74px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cta h2 { max-width: 900px; }
+    .contact-list { display: grid; gap: 12px; min-width: 250px; }
+    .contact-list a, .contact-list span {
+      display: block;
+      color: var(--white-soft);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 10px;
+    }
+
+    footer {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding-top: 28px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 920px) {
+      .nav-links { display: none; }
+      .hero-grid, .split, .coach, .gallery, .cta-box { grid-template-columns: 1fr; }
+      .hero { min-height: auto; padding-top: 122px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .service { grid-template-columns: 58px 1fr; }
+      .service p { grid-column: 2; }
+      .coach-media, .photo { min-height: 320px; }
+    }
+
+    @media (max-width: 560px) {
+      .nav { padding: 10px; }
+      .nav-inner { width: calc(100vw - 20px); }
+      .brand { min-width: 0; }
+      .brand span { display: none; }
+      .nav-cta { display: none; }
+      h1 { font-size: clamp(3.35rem, 18vw, 5.3rem); }
+      section { padding: 72px 16px; }
+      .stats { grid-template-columns: 1fr; width: calc(100vw - 32px); }
+      .stat { min-height: 130px; }
+      .service { grid-template-columns: 1fr; gap: 12px; }
+      .service p { grid-column: auto; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .button { width: 100%; }
+      .cta { padding-top: 76px; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="nav" aria-label="Glavna navigacija">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="Karate klub Sambon početna">
+          <span class="mark">KS</span>
+          <span><strong>Karate klub Sambon</strong><span>Vogošća</span></span>
+        </a>
+        <div class="nav-links" aria-label="Sekcije">
+          <a href="#programi">Programi</a>
+          <a href="#proces">Proces</a>
+          <a href="#treneri">Treneri</a>
+          <a href="#upis">Upis</a>
+        </div>
+        <a class="nav-cta" href="tel:+38761166634">Pozovi klub</a>
+      </div>
+    </nav>
+
+    <header id="top" class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Vogošća · Karate škola</div>
+          <h1>Karate gradi karakter.</h1>
+          <p class="hero-copy">Karate klub Sambon okuplja djecu, početnike i takmičare kroz disciplinovan trening, zdravo okruženje i rad sa iskusnim trenerima.</p>
+          <div class="hero-actions">
+            <a class="button" href="tel:+38761166634">Upis novih članova</a>
+            <a class="button secondary" href="https://www.facebook.com/p/Karate-klub-Sambon-Vogo%C5%A1%C4%87a-100076236318613/" target="_blank" rel="noreferrer">Facebook profil</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Brze informacije">
+          <p>Kontakt za upis</p>
+          <strong>+387 61 166 634</strong>
+          <p style="margin-top:18px">Programi za djecu, predškolski uzrast i takmičare.</p>
+        </aside>
+      </div>
+    </header>
+
+    <div class="stats" aria-label="Klub u brojevima">
+      <div class="stat"><span>Rad kluba</span><strong>20+ godina</strong></div>
+      <div class="stat"><span>Najmlađi uzrast</span><strong>3-5</strong></div>
+      <div class="stat"><span>Trenersko zvanje</span><strong>6. DAN</strong></div>
+      <div class="stat"><span>Fokus</span><strong>Disciplina</strong></div>
+    </div>
+
+    <section id="programi">
+      <div class="wrap split">
+        <div>
+          <div class="kicker">Programi</div>
+          <h2>Trening za svaki početak.</h2>
+        </div>
+        <div>
+          <p class="lead">Sambon radi sa djecom koja prave prve sportske korake, mladima koji žele steći disciplinu i takmičarima koji žele napredovati kroz ozbiljan rad.</p>
+          <div class="service-list">
+            <article class="service">
+              <span class="number">001</span>
+              <h3>Karate vrtić</h3>
+              <p>Predškolski karate za djecu od 3 do 5 godina: koordinacija, pažnja, osnovna motorika i sigurnost kroz igru.</p>
+            </article>
+            <article class="service">
+              <span class="number">002</span>
+              <h3>Škola karatea</h3>
+              <p>Program za početnike i mlađe članove koji uče osnovne tehnike, pravila ponašanja i redovan sportski ritam.</p>
+            </article>
+            <article class="service">
+              <span class="number">003</span>
+              <h3>Takmičarski tim</h3>
+              <p>Usmjeren rad za članove koji žele nastupati na turnirima, razvijati borbe, kate i mentalnu spremnost.</p>
+            </article>
+            <article class="service">
+              <span class="number">004</span>
+              <h3>Karakter i samopouzdanje</h3>
+              <p>Karate nije samo sport. Trening uči djecu disciplini, poštovanju, strpljenju i odgovornosti.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proces" class="process">
+      <div class="wrap split">
+        <div>
+          <div class="kicker">Kako se napreduje</div>
+          <h2>Jasan put od prvog treninga.</h2>
+        </div>
+        <div>
+          <p class="lead">Roditelji i članovi dobijaju jednostavan proces: probni trening, procjena nivoa, redovan rad i praćenje napretka.</p>
+          <div class="service-list">
+            <article class="service">
+              <span class="number">001</span>
+              <h3>Dolazak i upoznavanje</h3>
+              <p>Prvi kontakt služi da se dijete upozna sa salom, trenerima i načinom rada.</p>
+            </article>
+            <article class="service">
+              <span class="number">002</span>
+              <h3>Osnove tehnike</h3>
+              <p>Stavovi, kretanje, osnovni udarci, kontrola i pravila ponašanja na treningu.</p>
+            </article>
+            <article class="service">
+              <span class="number">003</span>
+              <h3>Redovan ritam</h3>
+              <p>Napredak dolazi kroz kontinuitet, disciplinu i dobar odnos prema grupi.</p>
+            </article>
+            <article class="service">
+              <span class="number">004</span>
+              <h3>Ispiti i turniri</h3>
+              <p>Kada član bude spreman, prelazi na polaganja, nastupe i dodatni takmičarski rad.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="treneri">
+      <div class="wrap">
+        <div class="kicker">Trenerski rad</div>
+        <h2>Iskustvo koje vodi mlađe generacije.</h2>
+        <div class="coach">
+          <div class="coach-media" role="img" aria-label="Karate trening"></div>
+          <div class="coach-card">
+            <div>
+              <h3>Kenan Alikadić</h3>
+              <p class="lead" style="margin-top:24px">Majstor karatea, crni pojas 6. DAN i osnivač Karate kluba Sambon. Klub kroz godine rada razvija mlade sportiste i prenosi iskustvo na nove generacije.</p>
+              <div class="badges">
+                <span class="badge">Crni pojas</span>
+                <span class="badge">6. DAN</span>
+                <span class="badge">Osnivač kluba</span>
+                <span class="badge">Vogošća</span>
+              </div>
+            </div>
+            <p class="text-muted">Napomena: fotografije su trenutno zamjenske sportske fotografije. Kada se dodaju originalne Sambon fotografije, stranica dobija potpuno klupski identitet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="quote">
+      <blockquote>Karate nije samo sport. Karate gradi karakter.</blockquote>
+    </div>
+
+    <section>
+      <div class="wrap split">
+        <div>
+          <div class="kicker">Atmosfera</div>
+          <h2>Trening, ekipa, takmičenja.</h2>
+        </div>
+        <div>
+          <p class="lead">Stranica je spremna za prave fotografije sa treninga, polaganja, turnira i medalja Karate kluba Sambon.</p>
+          <div class="gallery">
+            <div class="photo one" data-label="Trening"></div>
+            <div class="photo two" data-label="Takmičarski duh"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="upis" class="cta">
+      <div class="cta-box">
+        <div>
+          <div class="kicker">Upis novih članova</div>
+          <h2>Prvi trening može početi jednim pozivom.</h2>
+        </div>
+        <div class="contact-list" aria-label="Kontakt informacije">
+          <a href="tel:+38761166634">+387 61 166 634</a>
+          <a href="https://www.facebook.com/p/Karate-klub-Sambon-Vogo%C5%A1%C4%87a-100076236318613/" target="_blank" rel="noreferrer">Facebook stranica</a>
+          <span>Vogošća, Bosna i Hercegovina</span>
+        </div>
+      </div>
+      <footer>
+        <span>© 2026 Karate klub Sambon Vogošća</span>
+        <span>Disciplina · Poštovanje · Samopouzdanje</span>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
